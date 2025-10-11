@@ -1,7 +1,6 @@
 # importing libraries
 import pandas as pd 
 import numpy as np
-import seaborn as sns
 import plotly.express as px
 import streamlit as st
 
@@ -66,4 +65,5 @@ with c3:
     st.text('Days Vs. Tips')
     fig = px.pie(data_frame=df, names='day', values='total_bill', color=cat_filter, hole=0.4)
     st.plotly_chart(fig, use_container_width=True)
+
 
