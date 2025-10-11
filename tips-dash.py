@@ -10,20 +10,12 @@ st.set_page_config(page_title='Tips Dashboard',
 # loading data
 df = pd.read_csv('tips.csv')
 
-# sidebar
+# ------------------------- sidebar View -------------------------
 st.sidebar.header('Tips Dashboard')
 st.sidebar.image('spider.jpeg')
 st.sidebar.write('This dashboard is using Tips dataset from seaborn for educational purpose')
 
-
-
-st.sidebar.write("")
-st.sidebar.markdown('Made With Love :purple_heart: by Eng. [Ahmed Shoaib](https://www.linkedin.com/in/ahmedshoaib/)')
-
-
-
-
-# body
+# ------------------------- body 1 -------------------------
 # row a
 a1, a2, a3, a4 = st.columns(4)
 
@@ -32,6 +24,7 @@ a2.metric("Min. Total Bill", df['total_bill'].min())
 a3.metric("Max. Tip", df['tip'].max())
 a4.metric("Min. Tip", df['tip'].min())
 
+# ------------------------- sidebar Filters -------------------------
 st.sidebar.write('')
 st.sidebar.write('Filter Your Data')
 cat_filter = st.sidebar.selectbox('Categorical Filtering', [None, 'sex', 'smoker', 'day', 'time'])
@@ -39,7 +32,7 @@ num_filter = st.sidebar.selectbox('Numerical Filtering', [None, 'total_bill', 't
 row_filter = st.sidebar.selectbox('Row Filtering', [None, 'sex', 'smoker', 'day', 'time'])
 col_filter = st.sidebar.selectbox('Column Filtering', [None, 'sex', 'smoker', 'day', 'time'])
 
-
+# ------------------------- body 2 -------------------------
 #row b
 st.subheader('Total Bill VS. Tips')
 fig = px.scatter(data_frame=df, x ='total_bill', y='tip',
@@ -65,5 +58,10 @@ with c3:
     st.text('Days Vs. Tips')
     fig = px.pie(data_frame=df, names='day', values='total_bill', color=cat_filter, hole=0.4)
     st.plotly_chart(fig, use_container_width=True)
+
+
+st.sidebar.write("")
+st.sidebar.markdown('Made With Love :purple_heart: by Eng. [Ahmed Shoaib](https://www.linkedin.com/in/ahmedshoaib/)')
+
 
 
