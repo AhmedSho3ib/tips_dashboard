@@ -3,7 +3,11 @@
 
 An interactive data analysis project that explores restaurant tips data.
 This dashboard provides visual insights into tipping patterns using **Streamlit** and **Plotly**, allowing users to filter, explore, and understand relationships between variables like total bill, tip amount, gender, and time of day.
-🌐 [Dashboard Here]([https://linkedin.com/in/yourprofile](https://a-tips-dashboard.streamlit.app/))
+
+---
+
+🌐 [Dashboard Here](https://a-tips-dashboard.streamlit.app/)
+
 ---
 
 ## 🚀 Features
